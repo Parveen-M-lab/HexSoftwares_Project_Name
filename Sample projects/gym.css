@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #0c0000;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: right;
+    gap: 80px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #474047;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.facilities,
+.services,
+.membership,
+.about {
+    background: #f4f4f4;
+}
+
+.content {
+    max-width: 900px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background: #f9faf7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 250px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #f39c12;
+}
+
+.card i {
+    font-size: 40px;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.scroll-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.scroll-btn:hover {
+    background: #d35400;
+}

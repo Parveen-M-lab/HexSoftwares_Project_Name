@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLife Gym</title>
+
+  <link rel="stylesheet" href="gym.css">
+</head>
+<body>
+  
+
+<!-- Header -->
+  <header>
+    <nav>
+      <a href="#facilities">Facilities</a>
+      <a href="#services">Services</a>
+      <a href="#membership">Membership</a>
+      <a href="#About Us">About Us</a>
+    </nav>
+  </header>
+
+  <!--background header image-->
+<img src="gymdumb2.jpg" alt="gymdumb" width="110%" height="20%">
+
+  <!-- Facilities Section -->
+  <section id="facilities" class="facilities">
+    <h1>Our Facilities</h1>
+    <div class="content">
+      <p>State-of-the-art equipment and modern spaces designed to help you achieve your fitness goals.</p>
+      
+      <div class="cards">
+        <div class="card">
+        <h3>Cardio Zone</h3>
+          <p>Treadmills, ellipticals, and bikes for endurance training.</p>
+        </div>
+
+        <div class="card">
+         <h3>Strength Area</h3>
+          <p>Free weights, machines, and squat racks for muscle building.</p>
+        </div>
+
+        <div class="card">
+         <h3>Yoga Studio</h3>
+          <p>Peaceful space for yoga, meditation, and stretching.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="scroll-btn" onclick="scrollToSection('services')">See Services</button>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="content">
+      <p>We provide personalized training and wellness programs tailored to your needs.</p>
+      
+      <div class="cards">
+        <div class="card">
+         <h3>Personal Training</h3>
+          <p>Work one-on-one with certified trainers.</p>
+        </div>
+       
+        <div class="card">
+        <h3>Group Classes</h3>
+          <p>Join Zumba, HIIT, and spinning sessions.</p>
+        </div>
+        
+        <div class="card">
+         <h3>Nutrition Guidance</h3>
+          <p>Get expert advice on diet and supplements.</p>
+        </div>
+      </div>
+    </div>
+    <button class="scroll-btn" onclick="scrollToSection('membership')">View Membership Plans</button>
+  </section>
+
+  <!-- Membership Section -->
+  <section id="membership" class="membership">
+    <h2>Membership Plans</h2>
+    <div class="content">
+      <p>Choose a plan that fits your lifestyle and fitness journey.</p>
+      
+      <div class="cards">
+        <div class="card">
+         <h3>Basic</h3>
+          <p>₹999/month - Access to gym equipment.</p>
+        </div>
+        
+        <div class="card">
+        <h3>Premium</h3>
+          <p>₹1999/month - Includes group classes and nutrition guidance.</p>
+        </div>
+        
+        <div class="card">
+        <h3>Elite</h3>
+          <p>₹2999/month - All-inclusive with personal training sessions.</p>
+        </div>
+      </div>
+    </div>
+ <button class="scroll-btn" onclick="scrollToSection('About Us')">check it out </button>
+  </section>
+
+<!-- About Us-->
+     <section id="About Us" class="about">
+      <h2>About us</h2>
+      <div class="content">
+        <p>You can contact through our Email id or whatsapp</p>
+        <div class="cards">
+          <div class="card">
+            <p>Email Id: fitnessgym354@gmail.com</p>
+            <p>Whatsapp No: 6739193041</p>
+          </div>
+        </div>
+    
+    <button class="scroll-btn" onclick="scrollToSection('facilities')">Back to facilities</button>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 FitLife Gym | Designed with❤️</p>
+  </footer>
+
+  <!-- JavaScript for interactivty -->
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
