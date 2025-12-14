@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #111;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    height: 100vh;
+    background-color: #111;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 30px;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 35px;
+    justify-content: center;
+}
+
+.card {
+    background: #523e3e;
+    padding: 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 14px;
+    opacity: .8;
+    margin-bottom: 10px;
+}
+
+.card span {
+    display: block;
+    font-size: 20px;
+    color: #e31837;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.card button {
+    padding: 8px 16px;
+    background: #e31837;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.card button:hover {
+    background: #b80f29;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    color: #f1ebeb;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #f6e58d;
+}
+
+.btn,
+.hero-btn {
+    padding: 10px 22px;
+    background: #e31837;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.btn:hover,
+.hero-btn:hover {
+    background: #b80f29;
+}
+
+.hero {
+    margin-top: 180px;
+    max-width: 550px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 15px 0;
+    color: #fff;
+}
+
+/* Page Sections */
+.section {
+    padding: 120px 60px;
+    text-align: center;
+    font-size: 22px;
+    background: #130f0f;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Fade Animation for header */
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.animate:nth-child(1) {
+    animation-delay: .3s;
+}
+
+.animate:nth-child(2) {
+    animation-delay: .6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Reveal */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 1s ease-out;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cursor */
+.cursor {
+    height: 18px;
+    width: 18px;
+    border: 2px solid #e31837;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: 0.07s;
+    z-index: 9999;
+}
+
+.cursor::before {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: rgba(227, 24, 55, .4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(10px);
+}
+
+/* cursor */
+.cursor {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff2c00;
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 0.15s;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.cursor.active {
+    transform: scale(2);
+    background: #ff2c00;
+}
+
+/* navbar scroll */
+.navbar.scrolled {
+    background: #ff2b00d5;
+    backdrop-filter: blur(4px);
+    transition: .3s;
+}
+
+/* reveal animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: .8s;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* cart counter */
+.cart-count {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    background: #ff2c00;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 50%;
+    font-weight: bold;
+    z-index: 1000;
+    font-family: Arial;
+}
+
+/* popup */
+.pop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ff2c00;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    animation: fadeInOut 1.5s forwards;
+    font-weight: bold;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* hero button animation */
+.pulse {
+    animation: pulse .6s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
