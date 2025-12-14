@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Library</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+<header>
+    <h1>📚 My Book Library</h1>
+
+    <div class="top-controls">
+        <input type="text" id="searchBar" placeholder="Search Title / Author / Category...">
+        <button id="toggleTheme">🌙</button>
+        <button id="historyBtn">📜 History</button>
+    </div>
+</header>
+
+<section class="form-section">
+    <h2>Add New Book</h2>
+    <input type="text" id="title" placeholder="Book Title">
+    <input type="text" id="author" placeholder="Author">
+    <input type="text" id="category" placeholder="Category">
+    <input type="text" id="cover" placeholder="Cover Image URL">
+    <button id="addBook">Add Book</button>
+</section>
+
+<h2 class="list-heading">Library Collection</h2>
+
+<div class="filters">
+    <button class="filter-btn" data-category="all">All</button>
+    <button class="filter-btn" data-category="Fiction">Fiction</button>
+    <button class="filter-btn" data-category="Sci-Fi">Sci-Fi</button>
+    <button class="filter-btn" data-category="Education">Education</button>
+    <button class="filter-btn" data-category="Other">Other</button>
+</div>
+
+<div class="book-container" id="bookList"></div>
+
+<!-- Borrow History Modal -->
+<div id="historyModal" class="modal">
+    <div class="modal-content">
+        <h2>Borrow History</h2>
+        <ul id="historyList"></ul>
+        <button id="closeHistory">Close</button>
+    </div>
+</div>
+
+<script src="booklib.js"></script>
+</body>
+</html>
