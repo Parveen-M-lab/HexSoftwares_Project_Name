@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crowdfunding</title>
+  <link rel="stylesheet" href="fund.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <h1 class="logo">Crowdfunder</h1>
+      <div class="header-actions">
+        <input id="searchInput" type="search" placeholder="Search projects..." />
+        <select id="categoryFilter">
+          <option value="all">All categories</option>
+          <option value="tech">Tech</option>
+          <option value="art">Art</option>
+          <option value="games">Games</option>
+          <option value="community">Community</option>
+          <option value="education">Education</option>
+        </select>
+        <button id="newProjectBtn" class="btn primary">Create project</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="statsBar" class="stats-bar">
+      <div class="stat">
+        <span id="statProjects">0</span>
+        <label>Projects</label>
+      </div>
+      <div class="stat">
+        <span id="statRaised">₹0</span>
+        <label>Total raised</label>
+      </div>
+      <div class="stat">
+        <span id="statBackers">0</span>
+        <label>Backers</label>
+      </div>
+    </section>
+
+    <section id="projectGrid" class="grid"></section>
+  </main>
+
+  <!-- Create Project Modal -->
+  <div id="projectModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" data-close>&times;</button>
+      <h2>Create a project</h2>
+      <form id="projectForm" class="form">
+        <div class="form-row">
+          <label>Title</label>
+          <input name="title" type="text" required maxlength="80" />
+        </div>
+        <div class="form-row">
+          <label>Description</label>
+          <textarea name="description" rows="4" required maxlength="500"></textarea>
+        </div>
+        <div class="form-row">
+          <label>Category</label>
+          <select name="category" required>
+            <option value="tech">Tech</option>
+            <option value="art">Art</option>
+            <option value="games">Games</option>
+            <option value="community">Community</option>
+            <option value="education">Education</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Funding goal (₹)</label>
+          <input name="goal" type="number" min="100" step="100" required />
+        </div>
+        <div class="form-row">
+          <label>Cover image URL (optional)</label>
+          <input name="image" type="url" placeholder="https://example.com/image.jpg" />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Publish project</button>
+          <button type="button" class="btn" data-close>Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Project Detail Modal -->
+  <div id="detailModal" class="modal hidden">
+    <div class="modal-content wide">
+      <button class="modal-close" data-close>&times;</button>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <!-- Contribute Modal -->
+  <div id="contribModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" data-close>&times;</button>
+      <h2>Contribute to project</h2>
+      <form id="contribForm" class="form">
+        <div class="form-row">
+          <label>Your name (optional)</label>
+          <input name="name" type="text" maxlength="50" placeholder="Anonymous" />
+        </div>
+        <div class="form-row">
+          <label>Amount (₹)</label>
+          <input name="amount" type="number" min="50" step="50" required />
+        </div>
+        <div class="form-row">
+          <label>Message (optional)</label>
+          <textarea name="message" rows="3" maxlength="240" placeholder="Leave a note for the creator"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn success">Proceed to pay</button>
+          <button type="button" class="btn" data-close>Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Update Modal -->
+  <div id="updateModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" data-close>&times;</button>
+      <h2>Post a project update</h2>
+      <form id="updateForm" class="form">
+        <div class="form-row">
+          <label>Title</label>
+          <input name="title" type="text" required maxlength="120" />
+        </div>
+        <div class="form-row">
+          <label>Body</label>
+          <textarea name="body" rows="4" required maxlength="1000"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Publish update</button>
+          <button type="button" class="btn" data-close>Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="crwdfund.js"></script>
+</body>
+</html>
